@@ -1,0 +1,72 @@
+<div class="main">
+  <div class="container container-principal shadow mt-5">
+
+    <!-- Student -->
+    <div *ngIf="student">
+      <div class="d-flex gap-3">
+        <img src="../../assets/{{ profile }}.png" alt="Imagem perfil" class="profile" />
+        <h3 class="modal-title">{{ tipo }} Details</h3>
+      </div>
+      <div class="d-flex justify-content-center">
+        <img class="img-thumbnail img-fluid rounded" [src]="student.foto" alt="Foto perfil estudante">
+      </div>
+      <div class="row">
+        <div class="col-sm-8 mt-4">
+          <label for="nome" class="form-label">Nome</label>
+          <input #nome type="text" [(ngModel)]="student.nome" class="form-control" [disabled]="disabledInput" />
+        </div>
+        <div class="col-sm-4 mt-4">
+          <label for="idade" class="form-label">Idade</label>
+          <input #idade type="number" [(ngModel)]="student.idade" class="form-control" [disabled]="disabledInput" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-8 mt-3">
+          <label for="curso" class="form-label">Curso</label>
+          <input #curso type="text" [(ngModel)]="student.curso" class="form-control" [disabled]="disabledInput" />
+        </div>
+        <div class="col-sm-4 mt-3">
+          <label for="registro" class="form-label">RA</label>
+          <input #registro type="number" [(ngModel)]="student.registro" class="form-control" [disabled]="disabledInput" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Teacher -->
+    <div *ngIf="teacher">
+      <div class="d-flex gap-3">
+        <img src="../../assets/{{ profile }}.png" alt="Imagem perfil" class="profile" />
+        <h3 class="modal-title">{{ tipo }} Details</h3>
+      </div>
+      <div class="d-flex justify-content-center">
+        <img class="img-thumbnail img-fluid rounded shadow" [src]="teacher.foto" alt="Foto perfil estudante">
+      </div>
+      <div class="row">
+        <div class="col-sm-8 mt-4">
+          <label for="nome" class="form-label">Nome</label>
+          <input #nome type="text" [(ngModel)]="teacher.nome" class="form-control" [disabled]="disabledInput" />
+        </div>
+        <div class="col-sm-4 mt-4">
+          <label for="idade" class="form-label">Idade</label>
+          <input #idade type="number" [(ngModel)]="teacher.idade" class="form-control" [disabled]="disabledInput" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-8 mt-3">
+          <label for="curso" class="form-label">Curso</label>
+          <input #curso type="text" [(ngModel)]="teacher.curso" class="form-control" [disabled]="disabledInput" />
+        </div>
+        <div class="col-sm-4 mt-3">
+          <label for="registro" class="form-label">RA</label>
+          <input #registro type="number" [(ngModel)]="teacher.registro" class="form-control" [disabled]="disabledInput" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="d-flex gap-2 mt-5">
+      <button type="button" class="btn btn-success" (click)="save()">Salvar</button>
+      <button type="button" class="btn btn-danger" routerLink="{{ voltar }}">Voltar</button>
+    </div>
+  </div>
+</div>
